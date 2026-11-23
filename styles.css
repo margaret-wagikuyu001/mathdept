@@ -216,7 +216,7 @@ a {
 
     position: relative;
     overflow: hidden;
-
+    background-image: "img2.jpg";
     background:
         linear-gradient(
             110deg,
