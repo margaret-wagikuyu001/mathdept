@@ -298,7 +298,7 @@ button {
             rgba(0, 0, 0, 0.88) 54%,
             rgba(0, 0, 0, 0.48) 100%
         ),
-        url("img2.jpg");
+        url("images/img2.jpg");
 }
 
 .hero::before,
@@ -704,37 +704,37 @@ button {
 .programmes .info-card:nth-child(1) {
     background-image:
         linear-gradient(0deg, rgba(0,0,0,.94), rgba(0,0,0,.18)),
-        url("Student.jpg");
+        url("images/Student.jpg");
 }
 
 .programmes .info-card:nth-child(2) {
     background-image:
         linear-gradient(0deg, rgba(0,0,0,.94), rgba(0,0,0,.18)),
-        url("img2.jpg");
+        url("images/img2.jpg");
 }
 
 .programmes .info-card:nth-child(3) {
     background-image:
         linear-gradient(0deg, rgba(0,0,0,.94), rgba(0,0,0,.18)),
-        url("Research.jpg");
+        url("images/Research.jpg");
 }
 
 .resources .info-card:nth-child(1) {
     background-image:
         linear-gradient(0deg, rgba(0,0,0,.94), rgba(0,0,0,.18)),
-        url("img1.jpg");
+        url("images/img1.jpg");
 }
 
 .resources .info-card:nth-child(2) {
     background-image:
         linear-gradient(0deg, rgba(0,0,0,.94), rgba(0,0,0,.18)),
-        url("Student.jpg");
+        url("images/Student.jpg");
 }
 
 .resources .info-card:nth-child(3) {
     background-image:
         linear-gradient(0deg, rgba(0,0,0,.94), rgba(0,0,0,.18)),
-        url("img2.jpg");
+        url("images/img2.jpg");
 }
 
 /* ---------------------------------------------------------
@@ -802,7 +802,7 @@ button {
             transparent 30%
         ),
         linear-gradient(110deg, rgba(0,0,0,.96), rgba(0,0,0,.78)),
-        url("Research.jpg") center / cover;
+        url("images/Research.jpg") center / cover;
     border: 1px solid rgba(210, 172, 103, 0.45);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
@@ -932,7 +932,7 @@ button {
     padding: 70px max(7%, calc((100% - var(--container)) / 2));
     background-image:
         linear-gradient(100deg, rgba(0,0,0,.96), rgba(0,0,0,.62)),
-        url("img1.jpg");
+        url("images/img1.jpg");
     background-position: center 45%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1466,21 +1466,21 @@ button {
 .news .info-card:nth-child(1) {
     background-image:
         linear-gradient(0deg, rgba(0,0,0,.94), rgba(0,0,0,.18)),
-        url("University students.jpg");
+        url("images/University\ students.jpg");
 }
 
 .news .info-card:nth-child(2) {
     margin-top: 28px;
     background-image:
         linear-gradient(0deg, rgba(0,0,0,.94), rgba(0,0,0,.18)),
-        url("Maths seminar event.jpg");
+        url("images/Conference.jpg");
 }
 
 .news .info-card:nth-child(3) {
     margin-top: 56px;
     background-image:
         linear-gradient(0deg, rgba(0,0,0,.94), rgba(0,0,0,.18)),
-        url("Conference.jpg");
+        url("images/lecture-hall.webp");
 }
 
 .news-card {
