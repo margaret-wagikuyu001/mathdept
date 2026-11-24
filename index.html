@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathematics Department Website</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="js/index.js " defer></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
     
@@ -17,7 +17,7 @@
             Welcome to the Mathematics Department.
         </p>
 
-        <a href="#" id="announcement-link">Join In</a>
+        <a href="main.html" id="announcement-link">View update</a>
 
     </section>
 
@@ -34,11 +34,11 @@
         </div>
         <nav class="main-nav" id="mainNav" aria-label="Main navigation">
             <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
+            <a href="about.html">About</a>
             <a href="#programmes">Programmes</a>
             <a href="#resources">Resources</a>
-            <a href="#news">News & Events</a>
-            <a href="#contact">Contact</a>
+            <a href="main.html">News & Events</a>
+            <a href="contact.html">Contact</a>
         </nav>
         <button
             class="menu-toggle"
@@ -74,7 +74,7 @@
                     Explore Programmes
                 </a>
 
-                <a href="#about" class="btn-secondary">
+                <a href="about.html" class="btn-secondary">
                     Discover Our Department
                 </a>
             </div>
@@ -110,7 +110,7 @@
                     and professional fields.
                 </p>
 
-                <a href="#contact" class="about-link">
+                <a href="contact.html" class="about-link">
                     Get in Touch →
                 </a>
             </div>
@@ -162,21 +162,21 @@
                 <span>🎓</span>
                 <h3>Undergraduate Studies</h3>
                 <p>Explore foundational and advanced mathematical education.</p>
-                <a href="#contact">Learn More →</a>
+                <a href="contact.html">Enquire Here →</a>
             </article>
 
             <article class="info-card">
                 <span>📘</span>
                 <h3>Postgraduate Studies</h3>
                 <p>Develop advanced knowledge and research capabilities.</p>
-                <a href="#contact">Learn More →</a>
+                <a href="contact.html">Enquire Here →</a>
             </article>
 
             <article class="info-card">
                 <span>🔬</span>
                 <h3>Research Opportunities</h3>
                 <p>Explore mathematical investigation and innovation.</p>
-                <a href="#contact">Learn More →</a>
+                <a href="about.html#research">View Research Areas →</a>
             </article>
 
         </div>
@@ -214,21 +214,21 @@
                 <span>📚</span>
                 <h3>Lecture Notes</h3>
                 <p>Access learning materials and course notes.</p>
-                <a href="#contact">Explore Resources →</a>
+                <a href="contact.html">Ask About Notes →</a>
             </article>
 
             <article class="info-card">
                 <span>📝</span>
                 <h3>Past Papers</h3>
                 <p>Practice with authorized examination materials.</p>
-                <a href="#contact">Explore Resources →</a>
+                <a href="contact.html">Ask About Past Papers →</a>
             </article>
 
             <article class="info-card">
                 <span>🧮</span>
                 <h3>Mathematical Tools</h3>
                 <p>Discover useful mathematical learning tools.</p>
-                <a href="#contact">Explore Resources →</a>
+                <a href="contact.html">Enquire About Tools →</a>
             </article>
 
         </div>
@@ -248,21 +248,21 @@
                 <span>📢</span>
                 <h3>Department Announcements</h3>
                 <p>Stay informed about important departmental updates.</p>
-                <a href="#contact">Read More →</a>
+                <a href="main.html">View Announcements →</a>
             </article>
 
             <article class="info-card">
                 <span>🎤</span>
                 <h3>Academic Seminars</h3>
                 <p>Discover mathematical presentations and discussions.</p>
-                <a href="#contact">Read More →</a>
+                <a href="main.html">View Seminar Details →</a>
             </article>
 
             <article class="info-card">
                 <span>📅</span>
                 <h3>Upcoming Events</h3>
                 <p>Find academic activities and departmental events.</p>
-                <a href="#contact">Read More →</a>
+                <a href="main.html">View Upcoming Events →</a>
             </article>
 
         </div>
@@ -286,7 +286,7 @@
                 and mathematical innovation.
             </p>
 
-            <a href="#contact">Contact the Department →</a>
+            <a href="contact.html">Contact the Department →</a>
         </div>
 
     </section>
@@ -300,17 +300,21 @@
 
         <form id="contactForm" class="contact-form">
 
+            <label for="name">Full Name</label>
             <input type="text" id="name" placeholder="Your Name" required>
 
+            <label for="email">Email Address</label>
             <input type="email" id="email" placeholder="Your Email" required>
 
+            <label for="subject">Subject</label>
             <input type="text" id="subject" placeholder="Subject" required>
 
+            <label for="message">Message</label>
             <textarea id="message" placeholder="Your Message" required></textarea>
 
             <button type="submit">Submit Message</button>
 
-            <p id="formMessage"></p>
+            <p id="formMessage" aria-live="polite"></p>
 
         </form>
 
@@ -329,21 +333,21 @@
             <div>
                 <h3>Quick Links</h3>
                 <a href="#home">Home</a>
-                <a href="#about">About</a>
+                <a href="about.html">About</a>
                 <a href="#programmes">Programmes</a>
                 <a href="#resources">Resources</a>
             </div>
 
             <div>
                 <h3>Explore</h3>
-                <a href="#news">News & Events</a>
-                <a href="#contact">Contact</a>
+                <a href="main.html">News & Events</a>
+                <a href="contact.html">Contact</a>
             </div>
 
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 Egerton University Mathematics Department. Academic project.</p>
+            <p>© 2026 Egerton University Mathematics Department.</p>
         </div>
 
     </footer>

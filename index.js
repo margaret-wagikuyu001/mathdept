@@ -1,67 +1,45 @@
-
-// Select the navigation elements
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
-// Open and close the navigation menu
-menuToggle.addEventListener("click", function () {
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", function () {
+        const isOpen = mainNav.classList.toggle("is-open");
 
-    // Toggle the is-open class
-    const isOpen = mainNav.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
 
-    // Update accessibility information
-    menuToggle.setAttribute("aria-expanded", isOpen);
+    mainNav.addEventListener("click", function (event) {
+        if (event.target.closest("a")) {
+            mainNav.classList.remove("is-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+            menuToggle.textContent = "☰";
+        }
+    });
 
-    // Update the button label
-    menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
-    );
-
-    // Change the menu icon
-    menuToggle.textContent = isOpen ? "✕" : "☰";
-
-});
-
-// Close menu after clicking a navigation link
-mainNav.addEventListener("click", function (event) {
-
-    if (event.target.tagName === "A") {
-
-        mainNav.classList.remove("is-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation menu");
-        menuToggle.textContent = "☰";
-    }
-});
-// Close menu using the Escape key
-document.addEventListener("keydown", function (event) {
-
-    if (event.key === "Escape") {
-
-        mainNav.classList.remove("is-open");
-
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation menu");
-
-        menuToggle.textContent = "☰";
-
-    }
-
-});
-//ANIMATED STATISTICS
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            mainNav.classList.remove("is-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+            menuToggle.textContent = "☰";
+        }
+    });
+}
 
 const counters = document.querySelectorAll(".counter");
 
 counters.forEach(function(counter) {
-
     const target = Number(counter.dataset.target);
     let current = 0;
-
-    const increment = Math.ceil(target / 50);
+    const increment = Math.max(1, Math.ceil(target / 50));
 
     const timer = setInterval(function() {
-
         current += increment;
 
         if (current >= target) {
@@ -69,35 +47,44 @@ counters.forEach(function(counter) {
             clearInterval(timer);
         }
 
-        counter.textContent = current;
-
+        counter.textContent = String(current);
     }, 30);
-
 });
-
-
-// CONTACT FORM VALIDATION
 
 const contactForm = document.getElementById("contactForm");
-const formMessage = document.getElementById("formMessage");
 
-contactForm.addEventListener("submit", function(event) {
+if (contactForm) {
+    const formMessage =
+        document.getElementById("formMessage") ||
+        document.getElementById("formResponse");
 
-    event.preventDefault();
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const subject = document.getElementById("subject");
+        const message = document.getElementById("message");
 
-    if (!name || !email || !subject || !message) {
-        formMessage.textContent = "Please complete all fields.";
-        return;
-    }
+        if (!name || !email || !subject || !message) {
+            return;
+        }
 
-    formMessage.textContent =
-        "Thank you, " + name + ". Your message has been prepared.";
+        if (!name.value.trim() || !email.value.trim() ||
+            !subject.value.trim() || !message.value.trim()) {
+            if (formMessage) {
+                formMessage.textContent = "Please complete all fields.";
+                formMessage.className = "form-error";
+            }
+            return;
+        }
 
-    contactForm.reset();
+        if (formMessage) {
+            formMessage.textContent =
+                "Thank you, " + name.value.trim() + ". Your message has been prepared.";
+            formMessage.className = "form-success";
+        }
 
-});
+        contactForm.reset();
+    });
+}
