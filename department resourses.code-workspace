@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../department resourses"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../group project"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "department resourses"
+	}
+}
